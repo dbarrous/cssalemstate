@@ -1,0 +1,26 @@
+@import "./variables\ &\ mixins/_variables.scss";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+@import "./variables\ &\ mixins/_mixins.scss"; //Reset
+
+.fullpage {
+  overflow: hidden;
+}
+#middle {
+  background-color: $white;
+  min-height: 90vh;
+  width: 100vw;
+}
+
+.main {
+  text-align: center;
+}
+
+.sub {
+  background-color: grey;
+}
+
+.footer {
+  width: 100vw;
+  height: 10vh;
+  background-color: $secondary;
+}

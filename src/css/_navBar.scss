@@ -1,0 +1,150 @@
+@import "./variables\ &\ mixins/_variables.scss";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+@import "./variables\ &\ mixins/_mixins.scss"; //Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#navBarContainer {
+  //Grid Template of Navbar
+  display: grid;
+  grid-template-columns: 40% 60%;
+  //Background Color of Navbar
+  background-color: $primary;
+
+  @include for-size(phone-only) {
+    grid-template-columns: 70% 30%;
+    height: 20vh;
+  }
+
+  //Sizing of Navbar
+  width: 100vw;
+  height: 25vh;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#hamburgerMenuButton {
+  display: none;
+  transition: 0.5s;
+  @include for-size(phone-only) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+
+    &:hover {
+      cursor: pointer;
+      .hamMenu {
+        background-color: $secondary;
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+.hamMenu {
+  width: 35px;
+  height: 5px;
+  background-color: $white;
+  margin: 3px 35px;
+  &:last-child {
+    margin-bottom: 35px;
+  }
+}
+
+#navMenuContainer {
+  //Font Styles
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: $white;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+
+  @include for-size(desktop-down) {
+    font-size: 1.1rem;
+  }
+  @include for-size(tablet-landscape-down) {
+    font-size: 1rem;
+    text-align: center;
+  }
+  @include for-size(phone-only) {
+    display: none;
+  }
+  //Alignment
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+
+  //List (Tabs) Styles
+  ul {
+    display: flex;
+    list-style: none;
+
+    .navLinks {
+      text-decoration: none;
+      color: white;
+      transition: 0.2s ease-in-out;
+      .is-active {
+        font-size: 4rem;
+      }
+      &:hover {
+        color: $white;
+        text-decoration: underline;
+        text-decoration-color: $secondary;
+        cursor: pointer;
+      }
+      &:active {
+        color: $secondary;
+      }
+    }
+    li {
+      margin: 12px;
+      transition: 0.2s ease-in-out;
+    }
+    li:hover {
+      text-decoration: underline;
+      text-decoration-color: $secondary;
+      cursor: pointer;
+    }
+    li:active {
+      color: $secondary;
+      cursor: pointer;
+    }
+  }
+
+  img {
+    width: 2rem;
+    margin-bottom: 0.2rem;
+    margin-right: 2rem;
+    margin-left: 1rem;
+    filter: drop-shadow(5px 5px 5px #222);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+//Styling of SearchBar
+#searchBar {
+  display: none;
+}
+
+#navBarLogoContainer {
+  //Logo Styling
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  img {
+    width: 92.5%;
+    margin-bottom: 1rem;
+    margin-left: 0.75rem;
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+}
+
+//Media Queries
